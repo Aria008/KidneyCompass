@@ -1,0 +1,102 @@
+NEGATIVE TEST CASE
+
+INSERT INTO blood_pressure_readings (user_id, systolic, diastolic, date, created_at) VALUES
+-- Week 1: Consistently elevated BP due to poor habits
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 148, 94, '2025-07-08', NOW()), -- Very high (low activity)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 145, 92, '2025-07-09', NOW()), -- High (poor sleep)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 142, 89, '2025-07-10', NOW()), -- Slightly better (more steps)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 150, 95, '2025-07-11', NOW()), -- Spike (bad day)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 146, 93, '2025-07-12', NOW()), -- High again
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 139, 87, '2025-07-13', NOW()), -- Weekend improvement
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 135, 84, '2025-07-14', NOW()), -- Best day (most active)
+
+-- Week 2: Back to poor habits, some variation
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 144, 91, '2025-07-15', NOW()), -- Monday decline
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 147, 93, '2025-07-16', NOW()), -- Getting worse
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 141, 88, '2025-07-17', NOW()), -- Moderate (some effort)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 149, 94, '2025-07-18', NOW()), -- Bad day (stress + inactivity)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 143, 90, '2025-07-19', NOW()), -- Still elevated
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 138, 86, '2025-07-20', NOW()), -- Weekend effort
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 145, 92, '2025-07-21', NOW()); -- Ending poorly
+
+INSERT INTO health_metrics (user_id, metric_type, value, date, created_at) VALUES
+-- STEPS: Consistently missing goals (assume 7000+ target), sedentary lifestyle
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 2100, '2025-07-08', NOW()), -- Very low (causes high BP)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 2800, '2025-07-09', NOW()), -- Still low
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 3400, '2025-07-10', NOW()), -- Slight effort (BP improves)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 1900, '2025-07-11', NOW()), -- Worst day (BP spikes)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 2600, '2025-07-12', NOW()), -- Low again
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 4200, '2025-07-13', NOW()), -- Weekend effort (BP drops)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 4800, '2025-07-14', NOW()), -- Best day (lowest BP)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 2500, '2025-07-15', NOW()), -- Monday decline
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 2200, '2025-07-16', NOW()), -- Getting worse
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 3100, '2025-07-17', NOW()), -- Some effort
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 1800, '2025-07-18', NOW()), -- Terrible day
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 2900, '2025-07-19', NOW()), -- Still struggling
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 3800, '2025-07-20', NOW()), -- Weekend try
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'steps', 2400, '2025-07-21', NOW()), -- Back to poor habits
+
+-- WEIGHT: Fluctuating with fluid retention, correlates with low activity
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 79.2, '2025-07-08', NOW()), -- High (low activity + retention)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 79.6, '2025-07-09', NOW()), -- Getting worse
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 79.1, '2025-07-10', NOW()), -- Slight drop (more steps)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 80.1, '2025-07-11', NOW()), -- Spike (lowest activity)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 79.8, '2025-07-12', NOW()), -- Still elevated
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 78.9, '2025-07-13', NOW()), -- Weekend improvement
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 78.4, '2025-07-14', NOW()), -- Best day (most active)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 79.3, '2025-07-15', NOW()), -- Monday gain
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 79.8, '2025-07-16', NOW()), -- Retention worsening
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 79.4, '2025-07-17', NOW()), -- Slight improvement
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 80.3, '2025-07-18', NOW()), -- Worst day (lowest steps)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 79.9, '2025-07-19', NOW()), -- Still high
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 79.1, '2025-07-20', NOW()), -- Weekend drop
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'weight', 79.7, '2025-07-21', NOW()), -- Back up again
+
+-- SLEEP HOURS: Poor sleep habits, max 7 hours, often 4-5 hours
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 4.5, '2025-07-08', NOW()), -- Poor (affects next day)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 3.8, '2025-07-09', NOW()), -- Terrible
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 5.2, '2025-07-10', NOW()), -- Slightly better
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 4.1, '2025-07-11', NOW()), -- Bad again
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 5.8, '2025-07-12', NOW()), -- Struggling
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 6.5, '2025-07-13', NOW()), -- Weekend catchup
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 7.0, '2025-07-14', NOW()), -- Best night
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 4.9, '2025-07-15', NOW()), -- Monday crash
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 4.2, '2025-07-16', NOW()), -- Getting worse
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 5.5, '2025-07-17', NOW()), -- Moderate
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 3.9, '2025-07-18', NOW()), -- Worst night
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 5.1, '2025-07-19', NOW()), -- Still poor
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 6.2, '2025-07-20', NOW()), -- Weekend effort
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_hours', 4.7, '2025-07-21', NOW()), -- Back to poor
+
+-- SLEEP QUALITY: Correlates with sleep hours, max 7, often 3-5
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 4, '2025-07-08', NOW()), -- Poor quality
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 3, '2025-07-09', NOW()), -- Terrible
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 5, '2025-07-10', NOW()), -- Slightly better
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 3, '2025-07-11', NOW()), -- Bad again
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 5, '2025-07-12', NOW()), -- Struggling
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 6, '2025-07-13', NOW()), -- Weekend improvement
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 7, '2025-07-14', NOW()), -- Best night
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 4, '2025-07-15', NOW()), -- Monday crash
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 3, '2025-07-16', NOW()), -- Getting worse
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 5, '2025-07-17', NOW()), -- Moderate
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 2, '2025-07-18', NOW()), -- Worst quality
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 4, '2025-07-19', NOW()), -- Still poor
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 6, '2025-07-20', NOW()), -- Weekend effort
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 'sleep_quality', 4, '2025-07-21', NOW()); -- Back to poor
+
+INSERT INTO mood_entries (user_id, score, date, created_at) VALUES
+-- Mood reflecting poor health habits, max 75, often low due to sleep/health issues
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 42, '2025-07-08', NOW()), -- Low (poor sleep + health)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 35, '2025-07-09', NOW()), -- Worse (terrible sleep)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 48, '2025-07-10', NOW()), -- Slight improvement
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 38, '2025-07-11', NOW()), -- Down again (worst activity day)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 45, '2025-07-12', NOW()), -- Struggling
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 58, '2025-07-13', NOW()), -- Weekend improvement
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 65, '2025-07-14', NOW()), -- Best day (good sleep + activity)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 43, '2025-07-15', NOW()), -- Monday blues
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 39, '2025-07-16', NOW()), -- Getting worse
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 51, '2025-07-17', NOW()), -- Moderate effort
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 32, '2025-07-18', NOW()), -- Worst day (all metrics bad)
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 46, '2025-07-19', NOW()), -- Still low
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 54, '2025-07-20', NOW()), -- Weekend effort
+('601731e3-f467-40d2-bf5d-de2b5e622f6f', 41, '2025-07-21', NOW()); -- Ending poorly

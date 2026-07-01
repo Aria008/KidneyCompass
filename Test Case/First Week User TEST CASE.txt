@@ -1,0 +1,52 @@
+First Week User Test Case
+
+INSERT INTO blood_pressure_readings (user_id, systolic, diastolic, date, created_at) VALUES
+-- Week showing excellent BP control improving with activity
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 128, 81, '2025-07-21', NOW()), -- Monday: Good start (decent activity)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 125, 79, '2025-07-22', NOW()), -- Tuesday: Better (more steps)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 122, 77, '2025-07-23', NOW()), -- Wednesday: Excellent (high activity)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 119, 75, '2025-07-24', NOW()), -- Thursday: Outstanding (peak activity)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 121, 76, '2025-07-25', NOW()), -- Friday: Great (sustained effort)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 118, 74, '2025-07-26', NOW()); -- Saturday: Best (weekend peak)
+
+INSERT INTO health_metrics (user_id, metric_type, value, date, created_at) VALUES
+-- STEPS: Building up to and exceeding 9000 goal, strong positive correlation with BP
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'steps', 7200, '2025-07-21', NOW()), -- Monday: Good start (80% of goal)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'steps', 8100, '2025-07-22', NOW()), -- Tuesday: Building up (90% of goal)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'steps', 9300, '2025-07-23', NOW()), -- Wednesday: Exceeded goal! (BP drops)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'steps', 10200, '2025-07-24', NOW()), -- Thursday: Peak performance (lowest BP)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'steps', 9600, '2025-07-25', NOW()), -- Friday: Sustaining excellence
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'steps', 10800, '2025-07-26', NOW()), -- Saturday: Weekend peak (best BP)
+
+-- WEIGHT: Trending down toward 60kg goal, correlates with higher activity
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'weight', 64.8, '2025-07-21', NOW()), -- Monday: Starting above goal
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'weight', 64.5, '2025-07-22', NOW()), -- Tuesday: Gradual improvement
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'weight', 64.1, '2025-07-23', NOW()), -- Wednesday: Continued progress
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'weight', 63.7, '2025-07-24', NOW()), -- Thursday: Almost at goal
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'weight', 63.4, '2025-07-25', NOW()), -- Friday: Very close to goal
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'weight', 63.1, '2025-07-26', NOW()), -- Saturday: Nearly perfect!
+
+-- SLEEP HOURS: Consistently meeting 8-hour goal, supports next-day performance
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_hours', 7.8, '2025-07-21', NOW()), -- Monday: Close to goal
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_hours', 8.2, '2025-07-22', NOW()), -- Tuesday: Exceeded goal
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_hours', 8.1, '2025-07-23', NOW()), -- Wednesday: Excellent
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_hours', 8.4, '2025-07-24', NOW()), -- Thursday: Great recovery
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_hours', 8.0, '2025-07-25', NOW()), -- Friday: Perfect goal
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_hours', 8.3, '2025-07-26', NOW()), -- Saturday: Excellent rest
+
+-- SLEEP QUALITY: High quality correlating with good sleep hours (7-9 range)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_quality', 7, '2025-07-21', NOW()), -- Monday: Good quality
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_quality', 8, '2025-07-22', NOW()), -- Tuesday: Excellent
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_quality', 8, '2025-07-23', NOW()), -- Wednesday: Excellent
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_quality', 9, '2025-07-24', NOW()), -- Thursday: Outstanding
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_quality', 8, '2025-07-25', NOW()), -- Friday: Excellent
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 'sleep_quality', 9, '2025-07-26', NOW()); -- Saturday: Outstanding
+
+INSERT INTO mood_entries (user_id, score, date, created_at) VALUES
+-- Mood building with good health habits, strong positive correlations (max 75)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 58, '2025-07-21', NOW()), -- Monday: Good start
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 64, '2025-07-22', NOW()), -- Tuesday: Building confidence
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 69, '2025-07-23', NOW()), -- Wednesday: Great day (exceeded steps)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 74, '2025-07-24', NOW()), -- Thursday: Peak mood (best performance)
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 71, '2025-07-25', NOW()), -- Friday: Sustained happiness
+('2269d548-a7bb-43e5-beab-664ca3cfc58c', 75, '2025-07-26', NOW()); -- Saturday: Maximum mood (best day)

@@ -1,0 +1,106 @@
+POSITIVE TEST CASE
+
+INSERT INTO blood_pressure_readings (user_id, systolic, diastolic, date, created_at) VALUES
+-- Week 1: Poor habits period (high BP, low activity)
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 145, 92, '2025-07-08', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 142, 89, '2025-07-09', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 138, 87, '2025-07-10', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 135, 85, '2025-07-11', NOW()),
+
+-- Week 2: Gradual improvement (BP dropping as activity increases)
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 132, 82, '2025-07-12', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 128, 80, '2025-07-13', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 125, 78, '2025-07-14', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 122, 77, '2025-07-15', NOW()),
+
+-- Week 2 continued: Great period (excellent BP control)
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 118, 75, '2025-07-16', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 116, 74, '2025-07-17', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 119, 76, '2025-07-18', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 121, 78, '2025-07-19', NOW()),
+
+-- Final days: Minor setback but still much better than start
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 126, 81, '2025-07-20', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 123, 79, '2025-07-21', NOW());
+
+INSERT INTO health_metrics (user_id, metric_type, value, date, created_at) VALUES
+-- STEPS: Starting low, gradually increasing, showing strong correlation with BP improvement
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 2800, '2025-07-08', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 3200, '2025-07-09', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 3600, '2025-07-10', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 4100, '2025-07-11', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 4800, '2025-07-12', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 5500, '2025-07-13', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 6200, '2025-07-14', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 6800, '2025-07-15', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 7400, '2025-07-16', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 7900, '2025-07-17', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 7600, '2025-07-18', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 8100, '2025-07-19', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 6900, '2025-07-20', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'steps', 7500, '2025-07-21', NOW()),
+
+-- WEIGHT: Fluid retention spike early (CKD warning), then stabilizing as habits improve
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 62.3, '2025-07-08', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 63.8, '2025-07-09', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 64.1, '2025-07-10', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 63.2, '2025-07-11', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 62.1, '2025-07-12', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 61.4, '2025-07-13', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 60.8, '2025-07-14', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 60.3, '2025-07-15', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 59.9, '2025-07-16', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 59.7, '2025-07-17', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 59.8, '2025-07-18', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 60.1, '2025-07-19', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 60.4, '2025-07-20', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'weight', 60.2, '2025-07-21', NOW()),
+
+-- SLEEP HOURS: Poor sleep initially, improving with better habits, minor setback at end
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 5.5, '2025-07-08', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 4.0, '2025-07-09', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 6.0, '2025-07-10', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 6.5, '2025-07-11', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 7.0, '2025-07-12', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 7.5, '2025-07-13', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 8.0, '2025-07-14', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 8.0, '2025-07-15', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 7.5, '2025-07-16', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 8.0, '2025-07-17', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 7.5, '2025-07-18', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 8.0, '2025-07-19', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 6.0, '2025-07-20', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_hours', 7.0, '2025-07-21', NOW()),
+
+-- SLEEP QUALITY: Correlates strongly with sleep hours and mood
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 4, '2025-07-08', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 3, '2025-07-09', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 5, '2025-07-10', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 6, '2025-07-11', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 7, '2025-07-12', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 7, '2025-07-13', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 8, '2025-07-14', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 9, '2025-07-15', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 8, '2025-07-16', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 9, '2025-07-17', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 8, '2025-07-18', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 9, '2025-07-19', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 6, '2025-07-20', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 'sleep_quality', 7, '2025-07-21', NOW());
+
+INSERT INTO mood_entries (user_id, score, date, created_at) VALUES
+-- Mood improving with better sleep and activity - strong positive correlations
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 45, '2025-07-08', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 38, '2025-07-09', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 52, '2025-07-10', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 58, '2025-07-11', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 65, '2025-07-12', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 72, '2025-07-13', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 78, '2025-07-14', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 82, '2025-07-15', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 85, '2025-07-16', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 88, '2025-07-17', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 84, '2025-07-18', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 86, '2025-07-19', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 75, '2025-07-20', NOW()),
+('c4af7430-1ce2-41f6-9ab5-d412823b4d9b', 79, '2025-07-21', NOW());
