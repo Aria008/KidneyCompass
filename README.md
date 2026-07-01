@@ -1,16 +1,70 @@
-# kidneycompass
+# KidneyCompass
 
-A new Flutter project.
+AI-powered personal health informatics platform designed to support individuals living with Chronic Kidney Disease (CKD) through personalized health management and intelligent decision support.
+
+## Overview
+
+KidneyCompass empowers CKD patients to manage their condition by providing medication reminders, dialysis scheduling, hydration monitoring, nutrition guidance, health journals, and AI-assisted recommendations—all within a single mobile application.
+
+> This project was developed as a capstone project focused on improving long-term CKD self-management through accessible digital healthcare.
+
+---
+
+## Features
+
+- Medication reminders
+- Dialysis schedule management
+- Hydration tracking
+- Personalized nutrition recommendations
+- Health goal tracking
+- Daily health journal
+- Environmental health alerts
+- AI-assisted health insights
+
+---
+
+## Tech Stack
+
+- Flutter
+- Dart
+- Firebase
+- Cloud Firestore
+- Firebase Authentication
+- Gemini AI
+
+---
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Clone the repository
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone https://github.com/Aria008/KidneyCompass.git
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Install dependencies
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+```
+
+Run the application
+
+```bash
+flutter run
+```
+
+---
+
+## Contributors
+
+- **Enrica Dio**
+- **Jason Dizon**
+- **Paula Rebenque**
+- **Daniel Abe**
+
+---
+
+## License
+
+This repository is intended for academic and portfolio purposes.
